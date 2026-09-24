@@ -1,13 +1,9 @@
-# sandbox-orchestrator
+# workspace-orchestrator
 
-Provisions per-session containers — powers both the VSCode test and the DSA round.
+Provisions per-candidate live coding environments for the VSCode bug-fix round: a browser-based
+VS Code (code-server) plus a running instance of the candidate's app with a live preview.
+Ephemeral, no database of its own, core-api owns which repo and which bugs each round uses.
 
-Full plan: see the `platform` repo's README (sibling folder).
+Full architecture: see the `platform` repo's README (sibling folder).
 
-**Build order:** #3.
-
-**Lift from:**
-- `open-web-agent/src/lib/docker.ts` — per-session `code-server` container + a "runner" container serving a live preview (iframe-header handling already solved here); swap "clone GitHub repo" for "seed a test template," drop the AI agent container
-- `open-web-agent/src/components/workspace/WorkspaceClient.tsx` — tab UI pattern (VSCode / Preview) for `web-frontend` to copy
-
-**Note:** same mechanism serves DSA round and VSCode test — different starter template, not a separate system.
+Not built yet.
